@@ -15,7 +15,7 @@ login_manager = flask_login.LoginManager()
 
 login_manager.init_app(app)
 
-# Our mock database.
+# Our mock database. Do not use in production!
 users = {'foo@bar.tld': {'password': 'secret'}}
 
 class User(flask_login.UserMixin):
@@ -87,7 +87,7 @@ def registration():
             mac_address = request.form.get('mac_address')
             date_expired = request.form.get('date_expired')
             email = request.form.get('email')
-            user_id = 'ergkl'
+            user_id = 'test'
 
             with sql.connect("database.db") as con:
                 cur = con.cursor()
