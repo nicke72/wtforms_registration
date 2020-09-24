@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+  <h3>You have the following MAC Address Registred For Testing:</h3>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">MAC</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Email</th>
+        <th scope="col">User ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td> {{  mac_address }} </td>
+        <td> {{  date_expired}} </td>
+        <td> {{ email }} </td>
+        <td> {{ user_id }} </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table1">
+  <thead>
+    <tr>
+      <th scope="col">Result of addition:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> {{  msg }} </td>
+    </tr>
+  </tbody>
+  </table>
+  <hr>
+  <p>Register MAC Address - All humans working for you.</p>
+  <p><a href="list">View My Registred MAC Addresses.</a></p>
+  <p><a href="/">Register A New MAC Addresses.</a></p>
+  <p><a href="#">Do You Need Help?</a></p>
+</div>
+{% endblock %}

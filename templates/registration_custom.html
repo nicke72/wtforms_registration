@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+  <h3>Register Your MAC Address For Testing Purposes</h3>
+  <hr>
+  <form action="" method="post" class="form" role="form">
+    {{ form.csrf_token() }}
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        {{ wtf.form_field(form.mac_address, class='form-control', placeholder='12:34:56:78:ab:cd') }}
+      </div>
+      <div class="form-group col-md-4">
+        {{ wtf.form_field(form.date_expired, class='form-control', placeholder='') }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        {{ wtf.form_field(form.email, type='email', class='form-control', placeholder='Email Address') }}
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <hr>
+  <p>Register MAC Address - All humans working for you.</p>
+  <p><a href="list">View My Registred MAC Addresses.</a></p>
+  <p><a href="#">Do You Need Help?</a></p>
+</div>
+{% endblock %}
